@@ -1,0 +1,44 @@
+version: '3.8'
+services:
+  netflix:
+    build: .
+    command: streamlit run projects/netflix-content-strategy-intelligence/dashboard.py --server.port=8521 --server.address=0.0.0.0
+    ports:
+      - "8521:8521"
+    volumes:
+      - ./:/app
+    environment:
+      - PYTHONUNBUFFERED=1
+    healthcheck:
+      test: ["CMD", "curl", "-f", "http://localhost:8521/_stcore/health"]
+      interval: 30s
+      timeout: 10s
+      retries: 3
+  amazon:
+    build: .
+    command: streamlit run projects/amazon-product-customer-intelligence/dashboard.py --server.port=8522 --server.address=0.0.0.0
+    ports:
+      - "8522:8522"
+    volumes:
+      - ./:/app
+    environment:
+      - PYTHONUNBUFFERED=1
+    healthcheck:
+      test: ["CMD", "curl", "-f", "http://localhost:8522/_stcore/health"]
+      interval: 30s
+      timeout: 10s
+      retries: 3
+  google-trends:
+    build: .
+    command: streamlit run projects/google-search-trends-market-intelligence/dashboard.py --server.port=8523 --server.address=0.0.0.0
+    ports:
+      - "8523:8523"
+    volumes:
+      - ./:/app
+    environment:
+      - PYTHONUNBUFFERED=1
+    healthcheck:
+      test: ["CMD", "curl", "-f", "http://localhost:8523/_stcore/health"]
+      interval: 30s
+      timeout: 10s
+      retries: 3

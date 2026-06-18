@@ -1,6 +1,6 @@
 <div align="center">
 
-<img src="https://raw.githubusercontent.com/gosidehustlesisi/sierra-business-intelligence/main/avatar.png" width="120" style="border-radius: 50%;" alt="Sierra Napier avatar">
+<img src="https://raw.githubusercontent.com/thedatavigilante/sierra-business-intelligence/main/avatar.png" width="120" style="border-radius: 50%;" alt="Sierra Napier avatar">
 
 <h1>SIERRA BUSINESS INTELLIGENCE</h1>
 
@@ -11,13 +11,13 @@
 </p>
 
 <p>
-  <a href="https://gosidehustlesisi.github.io/sierra-business-intelligence/">
+  <a href="https://thedatavigilante.github.io/sierra-business-intelligence/">
     <img src="https://img.shields.io/badge/Portfolio-Live%20Site-FFB800?logo=githubpages" alt="Live Portfolio">
   </a>
-  <a href="https://star-history.com/#gosidehustlesisi/sierra-business-intelligence">
-    <img src="https://api.star-history.com/svg?repos=gosidehustlesisi/sierra-business-intelligence&type=Date" alt="Star History">
+  <a href="https://star-history.com/#thedatavigilante/sierra-business-intelligence">
+    <img src="https://api.star-history.com/svg?repos=thedatavigilante/sierra-business-intelligence&type=Date" alt="Star History">
   </a>
-  <a href="https://github.com/gosidehustlesisi/sierra-business-intelligence">
+  <a href="https://github.com/thedatavigilante/sierra-business-intelligence">
     <img src="https://img.shields.io/badge/GitHub-Repo-181717?logo=github" alt="GitHub">
   </a>
   <img src="https://img.shields.io/badge/Data-Real%20Records-2ea44f" alt="Real Data">
@@ -38,7 +38,7 @@ I analyze complex data at scale, architect AI systems that automate it, and visu
 
 Explore the full cinematic portfolio with interactive gallery, lightbox, and 28 curated figures:
 
-**[👉 gosidehustlesisi.github.io/sierra-business-intelligence](https://gosidehustlesisi.github.io/sierra-business-intelligence/)**
+**[👉 thedatavigilante.github.io/sierra-business-intelligence](https://thedatavigilante.github.io/sierra-business-intelligence/)**
 
 | Feature | What You Get |
 |---|---|
@@ -115,14 +115,14 @@ I wrote 10 business-facing SQL queries in DuckDB against a real 8,807-title cata
 ### Key Figures
 
 <p align="center">
-  <img src="https://raw.githubusercontent.com/gosidehustlesisi/sierra-business-intelligence/main/projects/netflix-content-strategy-intelligence/figures/01_content_mix.png" width="45%" alt="Content Mix">
-  <img src="https://raw.githubusercontent.com/gosidehustlesisi/sierra-business-intelligence/main/projects/netflix-content-strategy-intelligence/figures/03_quality_sunburst.png" width="45%" alt="Quality Sunburst">
+  <img src="https://raw.githubusercontent.com/thedatavigilante/sierra-business-intelligence/main/projects/netflix-content-strategy-intelligence/figures/01_content_mix.png" width="45%" alt="Content Mix">
+  <img src="https://raw.githubusercontent.com/thedatavigilante/sierra-business-intelligence/main/projects/netflix-content-strategy-intelligence/figures/03_quality_sunburst.png" width="45%" alt="Quality Sunburst">
 </p>
 
 > **Peak insight — Content Mix:** Movies dominate at 69.6%, but the TV show pipeline is 2.5× faster — a strategic pivot signal for acquisition teams.
 
 <p align="center">
-  <img src="https://raw.githubusercontent.com/gosidehustlesisi/sierra-business-intelligence/main/projects/netflix-content-strategy-intelligence/figures/03_genre_treemap.png" width="70%" alt="Genre Treemap">
+  <img src="https://raw.githubusercontent.com/thedatavigilante/sierra-business-intelligence/main/projects/netflix-content-strategy-intelligence/figures/03_genre_treemap.png" width="70%" alt="Genre Treemap">
 </p>
 
 > **Peak insight — Genre Landscape:** Drama and Comedy hold volume, but International Movies at 14.2% represent the largest untapped expansion opportunity.
@@ -168,14 +168,14 @@ I built a full pipeline from raw 495MB JSON.gz to cleaned CSV, ran 10 business S
 ### Key Figures
 
 <p align="center">
-  <img src="https://raw.githubusercontent.com/gosidehustlesisi/sierra-business-intelligence/main/projects/amazon-product-customer-intelligence/figures/figure_001_rating_distribution.png" width="45%" alt="Rating Distribution">
-  <img src="https://raw.githubusercontent.com/gosidehustlesisi/sierra-business-intelligence/main/projects/amazon-product-customer-intelligence/figures/figure_002_monthly_volume.png" width="45%" alt="Monthly Volume">
+  <img src="https://raw.githubusercontent.com/thedatavigilante/sierra-business-intelligence/main/projects/amazon-product-customer-intelligence/figures/figure_001_rating_distribution.png" width="45%" alt="Rating Distribution">
+  <img src="https://raw.githubusercontent.com/thedatavigilante/sierra-business-intelligence/main/projects/amazon-product-customer-intelligence/figures/figure_002_monthly_volume.png" width="45%" alt="Monthly Volume">
 </p>
 
 > **Peak insight — Rating Distribution:** 59.5% five-star dominance with a long tail of critical detail. The volume of negative sentiment is small but disproportionately informative.
 
 <p align="center">
-  <img src="https://raw.githubusercontent.com/gosidehustlesisi/sierra-business-intelligence/main/projects/amazon-product-customer-intelligence/figures/figure_005_helpfulness_by_length.png" width="70%" alt="Helpfulness by Length">
+  <img src="https://raw.githubusercontent.com/thedatavigilante/sierra-business-intelligence/main/projects/amazon-product-customer-intelligence/figures/figure_005_helpfulness_by_length.png" width="70%" alt="Helpfulness by Length">
 </p>
 
 > **Peak insight — Helpfulness Gradient:** Long reviews (500+ chars) achieve 91% helpfulness vs. 78% for short reviews. Detail drives perceived value.
@@ -223,14 +223,14 @@ I built a live-data pipeline using pytrends and BigQuery, handled multi-granular
 ### Key Figures
 
 <p align="center">
-  <img src="https://raw.githubusercontent.com/gosidehustlesisi/sierra-business-intelligence/main/projects/google-search-trends-market-intelligence/figures/01_exploratory_analysis_figure_001.png" width="45%" alt="Trend Lines">
-  <img src="https://raw.githubusercontent.com/gosidehustlesisi/sierra-business-intelligence/main/projects/google-search-trends-market-intelligence/figures/01_exploratory_analysis_figure_002.png" width="45%" alt="Correlation Heatmap">
+  <img src="https://raw.githubusercontent.com/thedatavigilante/sierra-business-intelligence/main/projects/google-search-trends-market-intelligence/figures/01_exploratory_analysis_figure_001.png" width="45%" alt="Trend Lines">
+  <img src="https://raw.githubusercontent.com/thedatavigilante/sierra-business-intelligence/main/projects/google-search-trends-market-intelligence/figures/01_exploratory_analysis_figure_002.png" width="45%" alt="Correlation Heatmap">
 </p>
 
 > **Peak insight — Trend Leaders:** Amazon sustains a 72.0 baseline, but AI surged +70.7% YoY — the search-intelligence pipeline caught the breakout in real time.
 
 <p align="center">
-  <img src="https://raw.githubusercontent.com/gosidehustlesisi/sierra-business-intelligence/main/projects/google-search-trends-market-intelligence/figures/03_executive_dashboard_figure_001.png" width="70%" alt="Executive Dashboard">
+  <img src="https://raw.githubusercontent.com/thedatavigilante/sierra-business-intelligence/main/projects/google-search-trends-market-intelligence/figures/03_executive_dashboard_figure_001.png" width="70%" alt="Executive Dashboard">
 </p>
 
 > **Peak insight — YoY Winners:** AI (+70.7%), inflation (+68.9%), and mental health (+62.5%) are the three breakouts — two of which your competitors probably missed.
@@ -265,7 +265,7 @@ I can build your competitive intelligence pipeline — live data ingestion, auto
 
 ```bash
 # Clone the repo
-git clone https://github.com/gosidehustlesisi/sierra-business-intelligence.git
+git clone https://github.com/thedatavigilante/sierra-business-intelligence.git
 cd sierra-business-intelligence
 
 # Install dependencies
@@ -355,7 +355,7 @@ Each project has its own `requirements.txt` for granular dependencies.
 | Platform | URL |
 |---|---|
 | 🌐 **Portfolio** | [e3-ai.com](https://e3-ai.com) |
-| 🐙 **GitHub** | [github.com/gosidehustlesisi](https://github.com/gosidehustlesisi) |
+| 🐙 **GitHub** | [github.com/thedatavigilante](https://github.com/thedatavigilante) |
 | 💼 **LinkedIn** | [linkedin.com/in/sierran](https://linkedin.com/in/sierran) |
 | 🏢 **Company** | [e3-ai.com](https://e3-ai.com) |
 

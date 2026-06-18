@@ -198,4 +198,4 @@ Data Scientist · AI Architect · Performance Analytics & Visualization
 
 ---
 
-*Part of the [sierra-business-intelligence](https://github.com/gosidehustlesisi/sierra-business-intelligence) portfolio.*
+*Part of the [sierra-business-intelligence](https://github.com/thedatavigilante/sierra-business-intelligence) portfolio.*

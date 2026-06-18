@@ -87,4 +87,4 @@ The dashboard includes an **auto-refresh toggle** in the sidebar. On Streamlit C
 
 ---
 
-**Built by Sierra Napier** — [GitHub](https://github.com/gosidehustlesisi) | [Portfolio](https://gosidehustlesisi.github.io/)
+**Built by Sierra Napier** — [GitHub](https://github.com/thedatavigilante) | [Portfolio](https://thedatavigilante.github.io/)

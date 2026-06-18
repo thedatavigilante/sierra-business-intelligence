@@ -99,7 +99,7 @@ From `trending_movies_20260517_165735.csv` (6,134 rows):
 - Test on simulated mobile viewport ( Chrome DevTools style )
 
 ### Phase 4: Deployment & Verification (Self-Healing Loop 4)
-**Goal:** Live on `gosidehustlesisi.github.io/sierra-business-intelligence/`.
+**Goal:** Live on `thedatavigilante.github.io/sierra-business-intelligence/`.
 
 **Steps:**
 1. Commit updated `docs/index.html`

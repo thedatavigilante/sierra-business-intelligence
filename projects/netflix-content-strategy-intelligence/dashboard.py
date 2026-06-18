@@ -483,4 +483,4 @@ st.sidebar.markdown(f"**Last Fetch:** {fetched_at}")
 if data_age_hours is not None:
     st.sidebar.markdown(f"**Data Age:** {data_age_hours:.1f} hours")
 st.sidebar.markdown("---")
-st.sidebar.markdown("Built by [Sierra Napier](https://github.com/gosidehustlesisi)")
+st.sidebar.markdown("Built by [Sierra Napier](https://github.com/thedatavigilante)")

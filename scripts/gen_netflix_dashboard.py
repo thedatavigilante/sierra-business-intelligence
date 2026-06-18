@@ -129,7 +129,7 @@ for j, line in enumerate(sources):
              color='#94a3b8', transform=ax5.transAxes)
 
 # Footer
-fig.text(0.5, 0.01, 'Live TMDB API data | Authenticated via Bearer token | github.com/gosidehustlesisi/sierra-business-intelligence', 
+fig.text(0.5, 0.01, 'Live TMDB API data | Authenticated via Bearer token | github.com/thedatavigilante/sierra-business-intelligence', 
          ha='center', va='bottom', fontsize=9, color='#64748b')
 
 out_path = Path('projects/netflix-content-strategy-intelligence/figures/03_executive_dashboard.png')

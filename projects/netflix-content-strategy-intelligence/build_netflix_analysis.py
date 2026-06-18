@@ -253,7 +253,7 @@ footer{{color:var(--muted);font-size:.85rem;text-align:center;margin-top:3rem;bo
 <li><b>Tools:</b> Python · pandas · Plotly. Zero synthetic records.</li>
 </ul></div>
 {charts}
-<footer>Built by Sierra Napier · data self-extracted from TMDB · <a href="https://github.com/gosidehustlesisi/sierra-business-intelligence">source on GitHub</a><br><span style="font-size:.8rem">This product uses the TMDB API but is not endorsed or certified by TMDB.</span></footer>
+<footer>Built by Sierra Napier · data self-extracted from TMDB · <a href="https://github.com/thedatavigilante/sierra-business-intelligence">source on GitHub</a><br><span style="font-size:.8rem">This product uses the TMDB API but is not endorsed or certified by TMDB.</span></footer>
 </div></body></html>"""
 
 

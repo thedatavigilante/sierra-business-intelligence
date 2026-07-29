@@ -8,8 +8,8 @@ requests>=2.31.0
 jupyter>=1.0.0
 ipykernel>=6.25.0
 
-# Google Trends
-pytrends>=4.9.0
+# Google Trends (trendspy replaces archived pytrends)
+trendspy>=0.1.6
 
 # NLP / Text
 nltk>=3.8.0

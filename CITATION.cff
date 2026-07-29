@@ -1,0 +1,24 @@
+cff-version: 1.2.0
+message: "If you use this portfolio or its data pipeline, please cite it as below."
+type: software
+title: "Sierra Business Intelligence"
+abstract: "A business intelligence portfolio with 101 production figures from three verified datasets (Netflix TMDB, Amazon SNAP, Google Trends). Zero synthetic records."
+authors:
+  - family-names: "Napier"
+    given-names: "Sierra"
+    orcid: "https://orcid.org/0000-0000-0000-0000"
+repository-code: "https://github.com/thedatavigilante/sierra-business-intelligence"
+url: "https://thedatavigilante.github.io/sierra-business-intelligence/"
+license: MIT
+keywords:
+  - "business intelligence"
+  - "data visualization"
+  - "netflix"
+  - "amazon reviews"
+  - "google trends"
+  - "duckdb"
+  - "streamlit"
+  - "plotly"
+  - "python"
+  - "sql"
+date-released: 2026-07-29

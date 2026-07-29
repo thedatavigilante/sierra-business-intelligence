@@ -1,0 +1,31 @@
+name: Feature Request
+description: Suggest a new dataset, analysis, or portfolio enhancement
+title: "[FEATURE] "
+labels: ["enhancement"]
+body:
+  - type: textarea
+    id: problem
+    attributes:
+      label: What problem does this solve?
+      description: Describe the business or analytical gap.
+      placeholder: "Adding Spotify streaming data would complement the Netflix content analysis with audio consumption patterns."
+    validations:
+      required: true
+  - type: textarea
+    id: proposal
+    attributes:
+      label: Proposed solution
+      description: What would you add or change?
+    validations:
+      required: true
+  - type: input
+    id: dataset
+    attributes:
+      label: Proposed data source
+      description: If applicable, name the dataset and its license
+      placeholder: "Spotify Web API (commercial use requires approval)"
+  - type: textarea
+    id: alternatives
+    attributes:
+      label: Alternatives considered
+      description: What else did you consider?

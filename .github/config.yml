@@ -1,0 +1,8 @@
+blank_issues_enabled: false
+contact_links:
+  - name: Data Source Question
+    url: https://github.com/thedatavigilante/sierra-business-intelligence/discussions
+    about: Ask about datasets, APIs, or reproducibility in Discussions
+  - name: Portfolio Feedback
+    url: https://github.com/thedatavigilante/sierra-business-intelligence/discussions
+    about: General feedback, hiring manager impressions, or suggestions

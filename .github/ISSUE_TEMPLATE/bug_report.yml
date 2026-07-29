@@ -1,0 +1,46 @@
+name: Bug Report
+description: Report a bug in code, visualization, or documentation
+title: "[BUG] "
+labels: ["bug"]
+body:
+  - type: markdown
+    attributes:
+      value: |
+        Thanks for reporting. Please be specific — include the file, line number (if known), and expected vs. actual behavior.
+  - type: textarea
+    id: description
+    attributes:
+      label: What happened?
+      description: Describe the bug clearly.
+      placeholder: "The Netflix genre distribution chart shows 15.2% for Drama, but TMDB API returns 14.8%."
+    validations:
+      required: true
+  - type: textarea
+    id: reproduce
+    attributes:
+      label: Steps to reproduce
+      description: How can we reproduce this?
+      placeholder: |
+        1. Run `python projects/netflix-content-strategy-intelligence/fetch_tmdb_data.py`
+        2. Open `notebooks/01_exploratory_analysis.ipynb`
+        3. Cell 12 shows inconsistent count
+    validations:
+      required: true
+  - type: textarea
+    id: expected
+    attributes:
+      label: Expected behavior
+      description: What should have happened?
+    validations:
+      required: true
+  - type: input
+    id: environment
+    attributes:
+      label: Environment
+      description: Python version, OS, relevant package versions
+      placeholder: "Python 3.11.4, macOS 14, pandas 2.0.3"
+  - type: textarea
+    id: logs
+    attributes:
+      label: Logs or screenshots
+      description: Paste error messages or screenshots

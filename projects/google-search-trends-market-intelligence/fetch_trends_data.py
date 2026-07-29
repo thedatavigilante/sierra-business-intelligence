@@ -1,25 +1,27 @@
 """
-Google Trends Data Fetcher
-==========================
-Automated fetcher using pytrends for real Google Search data.
+Google Trends Data Fetcher (2026 Update)
+=====================================
+Rewritten from pytrends (archived April 2025) to trendspy (maintained successor).
 Fetches interest over time, interest by region, and related queries
 for tech, health, and finance topics.
 
-Data Source: Google Trends via pytrends library (https://github.com/GeneralMills/pytrends)
+Data Source: Google Trends via trendspy library (https://github.com/vassiliskrikonis/trendspy)
 Also references BigQuery public dataset: bigquery-public-data.google_trends
 
-Author: Sierra Napier | e3-ai.com
+Author: Sierra Napier | The Data Vigilante
 """
 import os
 import time
 import pandas as pd
-from pytrends.request import TrendReq
+from trendspy import Trends
 from datetime import datetime
 
 DATA_DIR = os.path.join(os.path.dirname(__file__), "data")
 os.makedirs(DATA_DIR, exist_ok=True)
 
-pytrends = TrendReq(hl="en-US", tz=360)
+# Initialize with longer request delay to avoid rate limits
+# trendspy handles NID cookie warmup automatically
+pytrends = Trends(request_delay=2.0)
 
 # Categories of keywords to track
 KEYWORD_GROUPS = {
@@ -35,11 +37,10 @@ GEO_US = "US"
 
 
 def fetch_interest_over_time(keywords, timeframe=TIMEFRAME, geo=GEO_WORLDWIDE, label="ww"):
-    """Fetch interest-over-time for up to 5 keywords at a time (pytrends limit)."""
+    """Fetch interest-over-time for keywords via trendspy."""
     print(f"[FETCH] interest_over_time | keywords={keywords} | geo={geo or 'worldwide'} | tf={timeframe}")
     try:
-        pytrends.build_payload(keywords, cat=0, timeframe=timeframe, geo=geo)
-        df = pytrends.interest_over_time()
+        df = pytrends.interest_over_time(keywords, timeframe=timeframe)
         if df is None or df.empty:
             print(f"  ⚠️ Empty response for {keywords}")
             return None
@@ -57,8 +58,7 @@ def fetch_interest_by_region(keyword, geo=GEO_US, label="us"):
     """Fetch interest by region for a single keyword."""
     print(f"[FETCH] interest_by_region | keyword={keyword} | geo={geo}")
     try:
-        pytrends.build_payload([keyword], cat=0, timeframe=TIMEFRAME, geo=geo)
-        df = pytrends.interest_by_region(resolution="REGION", inc_low_vol=True, inc_geo_code=True)
+        df = pytrends.interest_by_region(keyword, geo=geo)
         if df is None or df.empty:
             print(f"  ⚠️ Empty response for {keyword}")
             return None
@@ -76,12 +76,7 @@ def fetch_related_queries(keyword, geo=GEO_WORLDWIDE):
     """Fetch rising and top related queries for a keyword."""
     print(f"[FETCH] related_queries | keyword={keyword}")
     try:
-        pytrends.build_payload([keyword], cat=0, timeframe=TIMEFRAME, geo=geo)
-        related = pytrends.related_queries()
-        if related is None or keyword not in related:
-            return None, None
-        top_df = related[keyword].get("top")
-        rising_df = related[keyword].get("rising")
+        top_df, rising_df = pytrends.related_queries(keyword)
         if top_df is not None:
             top_df["keyword"] = keyword
             top_df["type"] = "top"
@@ -97,14 +92,14 @@ def fetch_related_queries(keyword, geo=GEO_WORLDWIDE):
 
 
 def batch_fetch_interest_over_time(keywords, geo=GEO_WORLDWIDE, label="ww"):
-    """Fetch in batches of 5 (pytrends limit per payload)."""
+    """Fetch in batches of 5 (Google Trends limit per payload)."""
     batches = [keywords[i : i + 5] for i in range(0, len(keywords), 5)]
     frames = []
     for batch in batches:
         df = fetch_interest_over_time(batch, geo=geo, label=label)
         if df is not None:
             frames.append(df)
-        time.sleep(2)  # Rate limit politeness
+        time.sleep(3)  # Rate limit politeness between batches
     if frames:
         return pd.concat(frames, axis=1)
     return None
@@ -112,7 +107,8 @@ def batch_fetch_interest_over_time(keywords, geo=GEO_WORLDWIDE, label="ww"):
 
 def main():
     print("=" * 60)
-    print("Google Trends Data Fetch — Real Data via pytrends")
+    print("Google Trends Data Fetch — Real Data via trendspy")
+    print("(Successor to pytrends, archived April 2025)")
     print("=" * 60)
 
     # 1. Interest over time — Worldwide
@@ -138,7 +134,7 @@ def main():
         df = fetch_interest_by_region(kw, geo=GEO_US)
         if df is not None:
             region_frames.append(df)
-        time.sleep(1.5)
+        time.sleep(2)
     if region_frames:
         df_region = pd.concat(region_frames, ignore_index=True)
         path = os.path.join(DATA_DIR, "interest_by_region_us.csv")
@@ -154,7 +150,7 @@ def main():
             top_frames.append(top_df)
         if rising_df is not None:
             rising_frames.append(rising_df)
-        time.sleep(1.5)
+        time.sleep(2)
     if top_frames:
         df_top = pd.concat(top_frames, ignore_index=True)
         path = os.path.join(DATA_DIR, "related_queries_top.csv")

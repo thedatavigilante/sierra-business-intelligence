@@ -32,6 +32,14 @@ TMDB_IMG_BASE = "https://image.tmdb.org/t/p/w500"
 RATE_LIMIT_REQ = 40
 RATE_LIMIT_WINDOW = 10  # seconds
 
+# This script runs daily and writes a new timestamped snapshot of every
+# dataset each time. Without pruning, data/ grows by ~7 files/day forever.
+SNAPSHOT_STEMS = [
+    "trending_movies", "popular_tv", "movie_genres", "top_rated_movies",
+    "upcoming_movies", "genre_popularity", "trailers", "manifest",
+]
+KEEP_SNAPSHOTS = 14  # days of timestamped history to retain per dataset
+
 # ── Auth helpers ────────────────────────────────────────────────────────────
 
 def get_api_key():
@@ -227,6 +235,22 @@ def fetch_genre_popularity(genre_df):
     return pd.DataFrame(rows)
 
 
+def prune_old_snapshots(data_dir="data", keep=KEEP_SNAPSHOTS):
+    """
+    Delete old timestamped snapshots beyond the most recent `keep`, per dataset.
+    Leaves *_latest.csv untouched — those are what notebooks/dashboards read.
+    """
+    data_path = Path(data_dir)
+    for stem in SNAPSHOT_STEMS:
+        ext = "json" if stem == "manifest" else "csv"
+        snapshots = sorted(data_path.glob(f"{stem}_[0-9]*_[0-9]*.{ext}"))
+        stale = snapshots[:-keep] if keep > 0 else snapshots
+        for f in stale:
+            f.unlink()
+        if stale:
+            print(f"  🗑 Pruned {len(stale)} old {stem} snapshot(s), kept {min(len(snapshots), keep)}")
+
+
 # ── Main entrypoint ─────────────────────────────────────────────────────────
 
 def fetch_movie_trailers(movie_ids):
@@ -355,6 +379,9 @@ def fetch_all(data_dir="data"):
     with open(manifest_path, "w") as f:
         json.dump(manifest, f, indent=2)
     print(f"\n  ✓ Manifest: {manifest_path.name}")
+
+    print(f"\n  Pruning snapshots older than the most recent {KEEP_SNAPSHOTS}...")
+    prune_old_snapshots(data_dir)
 
     print(f"\n{'='*60}")
     print("FETCH COMPLETE — all data is live from TMDB API")
